@@ -50,5 +50,5 @@ DELETE FROM orders_history WHERE orderid=3005 or orderid=3008;
 /*Task 7: To increase customer rating by 50 with customers more than2 orders. */
 SELECT customerid from orders;
 
-UPDATE customers SET c_rating=c_rating+50 WHERE customerid=2002 OR customerid=2007;
+UPDATE customers SET c_rating=c_rating+50 WHERE customerid=2007;
 
