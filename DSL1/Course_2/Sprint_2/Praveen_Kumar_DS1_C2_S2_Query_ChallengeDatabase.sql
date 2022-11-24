@@ -26,12 +26,12 @@ GROUP BY department_name HAVING MAX(employees.salary) ORDER BY salary DESC LIMIT
 /*Task 9: To find the details of clerical grade employees */
 SELECT * FROM jobs HAVING  job_id LIKE "%CLERK%";
 
-/* Task 10: To find details about employees of clerical grade */
-SELECT * FROM employees HAVING job_id LIKE "%CLERK%";
+/* Task 10: To find average and count about employees of clerical grade  */
+SELECT count(*),AVG(salary) FROM employees WHERE job_id LIKE "%CLERK%";
 
 /*Task 11: To find the count of employees having salaries in the range $7000 to $10000 department wise */
 SELECT department_name,COUNT(employee_id) FROM employees,departments  WHERE employees.department_id=departments.department_id AND (salary>7000 and salary<10000)
-GROUP BY department_name ;
+GROUP BY department_name;
 
 
 
