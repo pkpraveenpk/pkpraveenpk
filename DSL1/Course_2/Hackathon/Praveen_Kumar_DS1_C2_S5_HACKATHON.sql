@@ -33,8 +33,10 @@ SELECT title"Adults only",rating from film WHERE rating="R" ORDER BY title ;
 
 /*Task 6: To show movie titles which have replacement cost upto $9 */
 SELECT title FROM film WHERE replacement_cost < 9;
+
 #Task 6.1: To return movies with replacment_cost between 15 and 20*/
 SELECT title FROM film WHERE replacement_cost BETWEEN 15 AND 20;
+
 #Task 6.2 : To return movies with highest replacment cost and order by rental rates */
 SELECT B.title FROM(SELECT title FROM film ORDER BY replacement_cost DESC LIMIT 10)B LEFT OUTER JOIN film ON B.title=film.title ORDER BY rental_rate;
 
