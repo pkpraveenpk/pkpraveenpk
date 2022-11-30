@@ -17,7 +17,9 @@ SELECT DISTINCT(CONCAT(first_name," ",LAST_NAME))"Unique_name" FROM actor ORDER 
 SELECT (CONCAT(first_name," ",LAST_NAME))"Repeated_Name",count(*)"COUNT" FROM actor GROUP BY Repeated_Name HAVING COUNT>1;
 
 /* Task 4: To find films based on actors preferences and group films by category */
-SELECT title,name from film INNER JOIN film_category INNER JOIN category on film.film_id=film_category.film_id AND film_category.category_id=category.category_id;
+SELECT concat(first_name,' ',last_name) as 'Actor', actor_id, film_id,title,name,release_year,special_features 
+FROM actor  join film_actor  join film  join film_category  join category 
+on actor.actor_id=film_actor.actor_id and film.film_id=film_actor.film_id and ilm.film_id=film_category.film_id and category.category_id=film_category.category_id where name in (select name from category) group by name;
  
 /* Task 5: To analyse which movie category has majority count and analyse trend based on description and category rating */
 
